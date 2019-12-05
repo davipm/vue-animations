@@ -34,10 +34,17 @@
 
         // facebook
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'website' },
+        { property: 'og:url', content: 'https://davi100daycsschallenger.surge.sh/' },
         { property: 'og:title', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
         { property: 'og:description', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
         { property: 'og:image', content: 'https://avatars3.githubusercontent.com/u/24769178?s=460&v=4' },
+
+        // twitter
+        { property: 'twitter:card', content: 'summary_large_image' },
+        { property: 'twitter:url', content: 'https://davi100daycsschallenger.surge.sh/' },
+        { property: 'twitter:title', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
+        { property: 'twitter:description', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
+        { property: 'twitter:image', content: 'https://avatars3.githubusercontent.com/u/24769178?s=460&v=4' },
       ]
     }
   }

@@ -4,7 +4,15 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    }
   },
   "dependencies": {
     "core-js": "^3.4.3",
@@ -18,6 +26,7 @@
     "@vue/cli-service": "^4.1.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
+    "react-snap": "^1.23.0",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
   },
