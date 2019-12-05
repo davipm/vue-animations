@@ -3,18 +3,42 @@
     <h1 class="app__title">CSS 100 days Challenger by Davi Pereira</h1>
     <Day1 />
     <Day2 />
+    <Day3 />
   </div>
 </template>
 
 <script>
   import Day1 from "./components/Day1";
   import Day2 from "./components/Day2";
+  import Day3 from "./components/Day3";
 
   export default {
     name: 'app',
     components: {
       Day1,
       Day2,
+      Day3,
+    },
+
+    metaInfo: {
+      title: 'CSS 100 days Challenger by Davi Pereira',
+      //titleTemplate: '%s - Yay!',
+      htmlAttrs: {
+        lang: 'pt-BR',
+        amp: true
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'title', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
+        { name: 'description', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
+
+        // facebook
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'website' },
+        { property: 'og:title', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
+        { property: 'og:description', content: 'CSS 100 days Challenger by Davi Pereira 2019' },
+        { property: 'og:image', content: 'https://avatars3.githubusercontent.com/u/24769178?s=460&v=4' },
+      ]
     }
   }
 </script>
