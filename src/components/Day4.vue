@@ -99,7 +99,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:600, 400);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,400");
 
 $red: #fa7373;
 $blue: #7ba2ff;
