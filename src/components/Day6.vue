@@ -5,7 +5,7 @@
     <div class="frame frame--fix">
       <div class="panel" :class="{ 'show-menu': menuActive }">
         <div class="header">
-          <div class="menu-icon" v-on:click="handleMenuIcon">
+          <div class="menu-icon" @click="handleMenuIcon">
             <div class="dash-top"></div>
             <div class="dash-bottom"></div>
             <div class="circle"></div>

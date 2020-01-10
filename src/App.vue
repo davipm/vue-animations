@@ -1,13 +1,16 @@
 <template>
   <div id="app">
     <h1 class="app__title">CSS 100 days Challenger by Davi Pereira</h1>
-    <Day1 />
-    <Day2 />
-    <Day3 />
-    <Day4 />
-    <Day5 />
-    <Day6 />
-    <Day7 />
+    <div class="row">
+      <Day1 />
+      <Day2 />
+      <Day3 />
+      <Day4 />
+      <Day5 />
+      <Day6 />
+      <Day7 />
+      <Day8 />
+    </div>
   </div>
 </template>
 
@@ -19,6 +22,7 @@ import Day4 from "./components/Day4";
 import Day5 from "./components/Day5";
 import Day6 from "./components/Day6";
 import Day7 from "./components/Day7";
+import Day8 from "./components/Day8";
 
 export default {
   name: "app",
@@ -29,7 +33,8 @@ export default {
     Day4,
     Day5,
     Day6,
-    Day7
+    Day7,
+    Day8
   },
 
   metaInfo: {
@@ -113,7 +118,19 @@ body {
   background-color: #ffffff;
 }
 
+#app {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .app__title {
+  margin-top: 0;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -160,5 +177,21 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 </style>
