@@ -5,7 +5,6 @@
     <div class="frame frame--fix">
       <div class="center">
         <div class="ball"></div>
-
         <div
           v-for="(item, index) in blubb"
           :key="index"
