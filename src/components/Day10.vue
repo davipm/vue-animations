@@ -1,0 +1,135 @@
+<template>
+  <section class="section">
+    <h3 class="section__title">Day 10</h3>
+    <div class="frame frame--fix">
+      <div class="invisible-man">
+        <div class="leg left">
+          <div class="shoe"></div>
+        </div>
+        <div class="leg right">
+          <div class="shoe"></div>
+        </div>
+      </div>
+      <div class="floor"></div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "Day10"
+};
+</script>
+
+<style scoped lang="scss">
+.frame--fix {
+  background: rgb(246, 232, 215);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(246, 232, 215, 1) 0%,
+    rgba(218, 190, 155, 1) 100%
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(246, 232, 215, 1) 0%,
+    rgba(218, 190, 155, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(246, 232, 215, 1) 0%,
+    rgba(218, 190, 155, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e8d7', endColorstr='#dabe9b',GradientType=1 );
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+.floor {
+  position: absolute;
+  top: 244px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #232323;
+}
+
+.invisible-man {
+  animation: fade_in 0.8s ease-out 1s;
+  animation-fill-mode: both;
+}
+
+.leg {
+  position: absolute;
+  top: 0;
+  left: 147px;
+  width: 151px;
+  height: 245px;
+  transform-origin: 50% 0;
+}
+
+.shoe {
+  position: absolute;
+  width: 151px;
+  height: 128px;
+  left: 0;
+  bottom: 0;
+  background: url("https://100dayscss.com/codepen/doc-martens.svg") no-repeat
+    center;
+  transform-origin: 0 95%;
+}
+
+.left {
+  animation: leg-swing 2s ease-in-out infinite;
+
+  .shoe {
+    animation: shoe-turn 2s ease-in-out infinite;
+  }
+}
+
+.right {
+  animation: leg-swing 2s ease-in-out 1s infinite;
+
+  .shoe {
+    animation: shoe-turn 2s ease-in-out 1s infinite;
+  }
+}
+
+@keyframes leg-swing {
+  0%,
+  100% {
+    transform: rotate(-22deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+}
+@keyframes shoe-turn {
+  0%,
+  100% {
+    transform: rotate(-10deg) translateY(-5px) translateX(10px);
+  }
+  25% {
+    transform: rotate(0deg) translateY(0px) translateX(0);
+  }
+  50% {
+    transform: rotate(10deg) translateY(-10px) translateX(10px);
+  }
+  75% {
+    transform: rotate(0deg) translateY(-30px) translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
