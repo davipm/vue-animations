@@ -14,6 +14,8 @@
       <Day10 />
       <Day11 />
       <Day12 />
+      <Day13 />
+      <Day14 />
     </div>
   </div>
 </template>
@@ -31,6 +33,8 @@ import Day9 from "./components/Day9";
 import Day10 from "./components/Day10";
 import Day11 from "./components/Day11";
 import Day12 from "./components/Day12";
+import Day13 from "./components/Day13";
+import Day14 from "./components/Day14";
 
 export default {
   name: "app",
@@ -46,7 +50,9 @@ export default {
     Day9,
     Day10,
     Day11,
-    Day12
+    Day12,
+    Day13,
+    Day14
   },
 
   metaInfo: {

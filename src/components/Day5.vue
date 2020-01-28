@@ -3,39 +3,42 @@
     <h3 class="section__title">Day 5</h3>
 
     <div class="frame frame--fix">
-      <div class="center">
+      <div v-if="error" class="error">
+        <h3>Error</h3>
+      </div>
+      <div v-else class="center">
         <div class="profile">
           <div class="image">
             <div class="circle-1"></div>
             <div class="circle-2"></div>
             <img
-              src="https://avatars3.githubusercontent.com/u/24769178?s=460&v=4"
+              :src="user.avatar_url"
               width="70"
               height="70"
-              alt="Davi Pereira"
+              :alt="user.name"
             />
           </div>
 
-          <div class="name">Davi Pereira</div>
+          <div class="name">{{ user.name }}</div>
           <div class="job">Software Engineer</div>
 
           <div class="actions">
-            <button class="btn">Follow</button>
-            <button class="btn">Message</button>
+            <a :href="user.html_url" target="_blank" class="btn">Follow</a>
+            <a href="mailto:davi.p.m94@gmail.com" class="btn">Message</a>
           </div>
         </div>
 
         <div class="stats">
           <div class="box">
-            <span class="value">523</span>
-            <span class="parameter">Posts</span>
+            <span class="value">{{ user.public_repos }}</span>
+            <span class="parameter">Public Repository's</span>
           </div>
           <div class="box">
-            <span class="value">1387</span>
+            <span class="value">8</span>
             <span class="parameter">Likes</span>
           </div>
           <div class="box">
-            <span class="value">146</span>
+            <span class="value">{{ user.followers }}</span>
             <span class="parameter">Follower</span>
           </div>
         </div>
@@ -46,7 +49,30 @@
 
 <script>
 export default {
-  name: "Day5"
+  name: "Day5",
+  data() {
+    return {
+      user: {},
+      error: false
+    };
+  },
+
+  created() {
+    this.getInfoUser();
+  },
+
+  methods: {
+    async getInfoUser() {
+      this.error = false;
+
+      try {
+        const response = await fetch("https://api.github.com/users/davi-94");
+        this.user = await response.json();
+      } catch (error) {
+        this.error = true;
+      }
+    }
+  }
 };
 </script>
 
@@ -153,11 +179,14 @@ $brown: #786450;
       width: 120px;
       height: 30px;
       margin: 0 auto 10px auto;
+      padding-top: 4px;
       background: none;
       border: 1px solid $brown;
       border-radius: 15px;
       font-size: 12px;
       font-weight: 600;
+      vertical-align: middle;
+      text-decoration: none;
       box-sizing: border-box;
       transition: all 0.3s ease-in-out;
       color: $brown;
@@ -209,5 +238,12 @@ $brown: #786450;
   .parameter {
     font-size: 11px;
   }
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 </style>

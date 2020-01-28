@@ -1,29 +1,29 @@
 <template>
   <section class="section">
-    <h3 class="section__title">Day 12 | in progress</h3>
+    <h3 class="section__title">Day 12</h3>
     <div class="frame frame--fix">
-      <div class="profile" id="profile-1">
+      <div class="profile" id="profile-1" @click="openProfile">
         <img src="https://100dayscss.com/codepen/13-1.jpg" alt="User Profile" />
         <div class="overlay"></div>
         <div class="plus"></div>
       </div>
-      <div class="profile" id="profile-2">
-        <img src="https://100dayscss.com/codepen/13-1.jpg" alt="User Profile" />
+      <div class="profile" id="profile-2" @click="openProfile">
+        <img src="https://100dayscss.com/codepen/13-2.jpg" alt="User Profile" />
         <div class="overlay"></div>
         <div class="plus"></div>
       </div>
-      <div class="profile" id="profile-3">
-        <img src="https://100dayscss.com/codepen/13-1.jpg" alt="User Profile" />
+      <div class="profile" id="profile-3" @click="openProfile">
+        <img src="https://100dayscss.com/codepen/13-3.jpg" alt="User Profile" />
         <div class="overlay"></div>
         <div class="plus"></div>
       </div>
-      <div class="profile" id="profile-4">
-        <img src="https://100dayscss.com/codepen/13-1.jpg" alt="User Profile" />
+      <div class="profile" id="profile-4" @click="openProfile">
+        <img src="https://100dayscss.com/codepen/13-4.jpg" alt="User Profile" />
         <div class="overlay"></div>
         <div class="plus"></div>
       </div>
-      <div class="details" id="details-1">
-        <div class="close"></div>
+      <div class="details" :class="{ active: profile }" id="details-1">
+        <div class="close" @click="openProfile"></div>
         <img
           src="https://100dayscss.com/codepen/13-1-header.jpg"
           alt=""
@@ -49,7 +49,18 @@
 
 <script>
 export default {
-  name: "Day12"
+  name: "Day12",
+  data() {
+    return {
+      profile: false
+    };
+  },
+
+  methods: {
+    openProfile() {
+      this.profile = !this.profile;
+    }
+  }
 };
 </script>
 
@@ -150,6 +161,139 @@ $red: #ec6565;
   }
 
   .close {
+    position: absolute;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    right: 10px;
+    background: $red;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out, transform 0.5s ease-in;
+    transform: rotate(45deg) translate3d(-105%, -105%, 0);
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 14px;
+      height: 2px;
+      top: 24px;
+      left: 18px;
+      background: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 14px;
+      top: 18px;
+      left: 24px;
+      background: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background: #ffffff;
+
+      &:after,
+      &:before {
+        background: $red;
+      }
+    }
+  }
+
+  .header {
+    transform: translate3d(0, -105%, 0);
+    transition: all 1s ease-in 0.5s;
+  }
+
+  .image {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+    top: 130px;
+    left: 150px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 4px 6px 15px 0 rgba(0, 0, 0, 0.2);
+    transform: translate3d(0, -250px, 0);
+    transition: all 1s ease-in 0.2s;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .infos {
+    box-sizing: border-box;
+    background: $red;
+    height: 220px;
+    padding-top: 67px;
+    transform: translate3d(0, 105%, 0);
+    transition: all 1s ease-in 0.5s;
+  }
+
+  .name {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .action {
+    margin-top: 35px;
+    text-align: center;
+
+    .btn {
+      position: relative;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      border: 1px solid #fff;
+      margin: 0 20px;
+      border-radius: 45px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: #fff;
+        color: $red;
+        box-shadow: 2px 3px 6px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .fa {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        line-height: 20px;
+        font-size: 19px;
+        padding-top: 12px;
+      }
+
+      .fa-phone {
+        font-size: 22px;
+      }
+
+      .fa-comment {
+        font-size: 20px;
+        padding-top: 10px;
+        left: 2px;
+      }
+
+      .fa-heart {
+        top: 1px;
+        left: 2px;
+      }
+    }
   }
 }
 
