@@ -179,7 +179,10 @@ body {
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #3faf82;
   color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transform: translate(-50%, -50%);
+  overflow: hidden;
 
   &--fix {
     position: relative;
