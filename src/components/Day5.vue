@@ -53,7 +53,8 @@ export default {
   data() {
     return {
       user: {},
-      error: false
+      error: false,
+      loading: false
     };
   },
 
@@ -63,6 +64,7 @@ export default {
 
   methods: {
     async getInfoUser() {
+      this.loading = true;
       this.error = false;
 
       try {
@@ -71,6 +73,8 @@ export default {
       } catch (error) {
         this.error = true;
       }
+
+      this.loading = false;
     }
   }
 };
