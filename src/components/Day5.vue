@@ -11,12 +11,7 @@
           <div class="image">
             <div class="circle-1"></div>
             <div class="circle-2"></div>
-            <img
-              :src="user.avatar_url"
-              width="70"
-              height="70"
-              :alt="user.name"
-            />
+            <img :src="user.avatar_url" width="70" height="70" :alt="user.name" />
           </div>
 
           <div class="name">{{ user.name }}</div>

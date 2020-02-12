@@ -1,0 +1,279 @@
+<template>
+  <section class="section">
+    <h3 class="section__title">Day 17</h3>
+    <div class="frame frame--fix">
+      <div class="circle"></div>
+      <div class="line left"></div>
+      <div class="line right"></div>
+      <div class="bracket left"></div>
+      <div class="bracket right"></div>
+      <div class="small top">collect</div>
+      <div class="big">moment</div>
+      <div class="small bottom">not things</div>
+      <div class="hide top"></div>
+      <div class="hide bottom"></div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "Day17"
+};
+</script>
+
+<style scoped lang="scss">
+.frame--fix {
+  color: #fff;
+  background: #e16d6c;
+}
+
+.circle {
+  position: absolute;
+  z-index: 10;
+  height: 50px;
+  width: 50px;
+  top: 175px;
+  left: 175px;
+  background: #fff;
+  border-radius: 50%;
+  animation: circle 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.line {
+  position: absolute;
+  z-index: 10;
+  width: 150px;
+  height: 4px;
+  top: 198px;
+  background: #fff;
+  transform: scaleX(0);
+
+  &.left {
+    left: 50px;
+    transform-origin: 100% 50%;
+    animation: lines 1s ease-in-out 0.8s, line-left 1s steps(1) 0.8s;
+  }
+
+  &.right {
+    left: 50px;
+    transform-origin: 0% 50%;
+    animation: lines 1s ease-in-out 0.8s, line-right 1s steps(1) 0.8s;
+  }
+}
+
+.bracket {
+  position: absolute;
+  z-index: 10;
+  width: 4px;
+  height: 70px;
+  top: 165px;
+  background: #fff;
+  animation: bracket 0.4s ease-out 1.7s;
+  animation-fill-mode: both;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 25px;
+    height: 4px;
+    background: #fff;
+  }
+
+  &.left {
+    left: 50px;
+
+    &::before {
+      top: 0;
+      left: 0;
+      transform-origin: 0% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      transform-origin: 0% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+      animation-fill-mode: both;
+    }
+  }
+
+  &.right {
+    right: 50px;
+
+    &::before {
+      top: 0;
+      right: 0;
+      transform-origin: 100% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+      animation-fill-mode: both;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      transform-origin: 100% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+      animation-fill-mode: both;
+    }
+  }
+}
+
+.big {
+  position: absolute;
+  z-index: 5;
+  top: 175px;
+  width: 400px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 50px;
+  color: #fff;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+.hide {
+  position: absolute;
+  z-index: 7;
+  width: 400px;
+  height: 50px;
+  background: #e16d6c;
+  left: 0;
+  animation: reveal 0.4s ease-out 1.7s;
+  animation-fill-mode: both;
+
+  &.top {
+    bottom: 49%;
+    transform-origin: 50% 0%;
+  }
+
+  &.bottom {
+    top: 49%;
+    transform-origin: 50% 100%;
+  }
+}
+
+.small {
+  position: absolute;
+  z-index: 10;
+  width: 400px;
+  text-align: center;
+  left: 0;
+  font-weight: 300;
+  font-size: 30px;
+  color: #ffffff;
+  line-height: 30px;
+  text-transform: uppercase;
+
+  &.top {
+    top: 140px;
+    animation: small-top 0.5s ease-out 2.2s;
+    animation-fill-mode: both;
+  }
+
+  &.bottom {
+    bottom: 140px;
+    animation: small-bottom 0.5s ease-out 2.2s;
+    animation-fill-mode: both;
+  }
+}
+
+// animations
+@keyframes circle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  90%,
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lines {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes line-left {
+  0% {
+    transform-origin: 100% 50%;
+  }
+  50%,
+  100% {
+    transform-origin: 0% 50%;
+  }
+}
+
+@keyframes line-right {
+  0% {
+    transform-origin: 0% 50%;
+  }
+  50%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+}
+
+@keyframes bracket {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes bracket-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes small-top {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes small-bottom {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+</style>
