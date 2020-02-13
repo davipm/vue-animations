@@ -101,9 +101,11 @@ input[type="radio"] {
 #check-1:checked ~ .bg {
   transform: translateX(0px);
 }
+
 #check-2:checked ~ .bg {
   transform: translateX(-400px);
 }
+
 #check-3:checked ~ .bg {
   transform: translateX(-800px);
 }
