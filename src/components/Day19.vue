@@ -10,34 +10,14 @@
           </div>
         </div>
         <ul>
-          <li>
-            <input type="checkbox" id="item-1" name="item-1" />
-            <label for="item-1" class="text">Create a list</label>
-            <label for="item-1" class="button"></label>
-            <svg width="15px" height="10px" class="checkmark">
-              <polyline points="1,5 6,9 14,1" />
-            </svg>
-          </li>
-          <li>
-            <input type="checkbox" id="item-2" name="item-2" />
-            <label for="item-2" class="text">Create a list</label>
-            <label for="item-2" class="button"></label>
-            <svg width="15px" height="10px" class="checkmark">
-              <polyline points="1,5 6,9 14,1" />
-            </svg>
-          </li>
-          <li>
-            <input type="checkbox" id="item-3" name="item-3" />
-            <label for="item-3" class="text">Create a list</label>
-            <label for="item-3" class="button"></label>
-            <svg width="15px" height="10px" class="checkmark">
-              <polyline points="1,5 6,9 14,1" />
-            </svg>
-          </li>
-          <li>
-            <input type="checkbox" id="item-4" name="item-4" />
-            <label for="item-4" class="text">Create a list</label>
-            <label for="item-4" class="button"></label>
+          <li v-for="(list, index) in lists" :key="index">
+            <input
+              type="checkbox"
+              :id="`item-${index}`"
+              :name="`item-${index}`"
+            />
+            <label :for="`item-${index}`" class="text">{{ list.item }}</label>
+            <label :for="`item-${index}`" class="button"></label>
             <svg width="15px" height="10px" class="checkmark">
               <polyline points="1,5 6,9 14,1" />
             </svg>
@@ -53,6 +33,20 @@ export default {
   name: "Day19",
   data() {
     return {
+      lists: [
+        {
+          item: "Item 1"
+        },
+        {
+          item: "Item 2"
+        },
+        {
+          item: "Item 3"
+        },
+        {
+          item: "Item 4"
+        }
+      ],
       d: new Date(),
       days: [
         "Sunday",
