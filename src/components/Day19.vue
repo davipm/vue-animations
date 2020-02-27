@@ -5,17 +5,11 @@
       <div class="list">
         <div class="head">
           <div class="title">{{ days[d.getDay()] }}</div>
-          <div class="subtitle">
-            {{ days[d.getMonth()] }} {{ d.getDate() }}, {{ d.getFullYear() }}
-          </div>
+          <div class="subtitle">{{ days[d.getMonth()] }} {{ d.getDate() }}, {{ d.getFullYear() }}</div>
         </div>
         <ul>
           <li v-for="(list, index) in lists" :key="index">
-            <input
-              type="checkbox"
-              :id="`item-${index}`"
-              :name="`item-${index}`"
-            />
+            <input type="checkbox" :id="`item-${index}`" :name="`item-${index}`" />
             <label :for="`item-${index}`" class="text">{{ list.item }}</label>
             <label :for="`item-${index}`" class="button"></label>
             <svg width="15px" height="10px" class="checkmark">
