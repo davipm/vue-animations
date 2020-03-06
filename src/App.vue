@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1 class="app__title">CSS 100 days Challenger by Davi Pereira</h1>
+    <h1 class="app__title">PLaying with CSS by: Davi Pereira</h1>
     <div class="row">
       <Day1 />
       <Day2 />
