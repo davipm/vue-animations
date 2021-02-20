@@ -23,6 +23,7 @@
       <Day19 />
       <Day20 />
       <Day21 />
+      <Day22 />
     </div>
   </div>
 </template>
@@ -49,6 +50,7 @@ import Day18 from "./components/Day18";
 import Day19 from "./components/Day19";
 import Day20 from "./components/Day20";
 import Day21 from "@/components/Day21";
+import Day22 from "@/components/Day22";
 
 export default {
   name: "app",
@@ -74,6 +76,7 @@ export default {
     Day19,
     Day20,
     Day21,
+    Day22,
   },
 
   metaInfo: {
