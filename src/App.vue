@@ -22,6 +22,7 @@
       <Day18 />
       <Day19 />
       <Day20 />
+      <Day21 />
     </div>
   </div>
 </template>
@@ -47,6 +48,7 @@ import Day17 from "./components/Day17";
 import Day18 from "./components/Day18";
 import Day19 from "./components/Day19";
 import Day20 from "./components/Day20";
+import Day21 from "@/components/Day21";
 
 export default {
   name: "app",
@@ -70,7 +72,8 @@ export default {
     Day17,
     Day18,
     Day19,
-    Day20
+    Day20,
+    Day21,
   },
 
   metaInfo: {
@@ -156,12 +159,15 @@ body {
 
 #app {
   width: 100%;
-  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 30px;
   padding-right: 15px;
   padding-left: 15px;
+
+  @media (min-width: 1140px) {
+    max-width: 1200px;
+  }
 }
 
 .app__title {

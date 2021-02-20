@@ -3,7 +3,7 @@
     <h3 class="section__title">Day 8</h3>
     <div class="frame frame--fix">
       <div class="moon">
-        <div v-for="item in create" :class="`create-${item}`" :key="item" />
+        <div v-for="(item, index) in create" :class="`create-${item}`" :key="index" />
       </div>
       <div class="hill-bg-1"></div>
       <div class="hill-bg-2"></div>
@@ -37,9 +37,9 @@
           </tr>
         </table>
       </div>
-      <div v-for="item in dropBig" :key="item" :class="`drop-big-${item}`" />
-      <div v-for="item in dropBig" :key="item" :class="`drop-medium-${item}`" />
-      <div v-for="item in dropBig" :key="item" :class="`drop-small-${item}`" />
+      <div v-for="(item, index) in dropBig" :key="index * 2" :class="`drop-big-${item}`" />
+      <div v-for="(item, index) in dropBig" :key="index * 4" :class="`drop-medium-${item}`" />
+      <div v-for="(item, index) in dropBig" :key="index * 5" :class="`drop-small-${item}`" />
     </div>
   </section>
 </template>

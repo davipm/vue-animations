@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <h3 class="section__title">Day 19</h3>
+    <h3 class="section__title">Day 20</h3>
     <div class="frame frame--fix">
       <div class="map">
         <Map />

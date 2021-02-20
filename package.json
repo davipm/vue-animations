@@ -15,20 +15,20 @@
     }
   },
   "dependencies": {
-    "core-js": "^3.4.3",
-    "register-service-worker": "^1.6.2",
-    "vue": "^2.6.10",
-    "vue-meta": "^2.3.1"
+    "core-js": "^3.9.0",
+    "register-service-worker": "^1.7.2",
+    "vue": "^2.6.12",
+    "vue-meta": "^2.4.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-pwa": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
-    "node-sass": "^4.12.0",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-plugin-pwa": "^4.5.11",
+    "@vue/cli-service": "^4.5.11",
+    "node-sass": "^4.14.1",
     "prettier": "^1.19.1",
     "react-snap": "^1.23.0",
-    "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.12"
   },
   "browserslist": [
     "> 1%",
