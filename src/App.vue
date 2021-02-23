@@ -76,7 +76,7 @@ export default {
     Day19,
     Day20,
     Day21,
-    Day22,
+    Day22
   },
 
   metaInfo: {
@@ -241,14 +241,12 @@ body {
 .section {
   position: relative;
   width: 100%;
-  flex: 0 0 50%;
-  max-width: 50%;
   padding-right: 15px;
   padding-left: 15px;
 
-  @media (max-width: 768px) {
-    flex: 0 0 100%;
-    max-width: 100%;
+  @media (min-width: 768px) {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 </style>
